@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example</title>
+    <script src="app.js" defer></script>
+    <style>
+        .chat-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            margin-left: auto; /* Alinea a la derecha */
+            border-radius: 10px 10px 0 10px;
+        }
+
+        .api-message {
+            background-color: #e9ecef;
+            color: black;
+            margin-right: auto; /* Alinea a la izquierda */
+            border-radius: 10px 10px 10px 0;
+        }
+
+        .api-message img {
+            max-width: 200px;
+            margin-top: 10px;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .chat-input button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fetch API Example</h1>
+    <button onclick="getData()">GET Data</button>
+    <button onclick="postData()">POST Data</button>
+    <button onclick="putData()">PUT Data</button>
+    <button onclick="deleteData()">DELETE Data</button>
+
+    <h2>Response:</h2>
+    <pre id="response"></pre>
+
+
+    <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+            <!-- Los mensajes aparecerán aquí -->
+        </div>
+        <form id="chatForm" class="chat-input">
+            <input type="text" 
+                   id="messageInput" 
+                   placeholder="Escribe una pregunta de sí o no..."
+                   required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
